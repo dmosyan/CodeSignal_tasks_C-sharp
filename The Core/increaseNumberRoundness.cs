@@ -1,18 +1,16 @@
 bool increaseNumberRoundness(int n) 
 {
-    bool answer = false;
-    while(n > 0)
+  bool increased = false;
+  while (n > 0) 
+  {
+    if (n % 10 == 0 && increased) 
     {
-        if(n % 10 == 0 && answer==true)
-        {
-            return true;
-        }
-        else if(n % 10 != 0)
-        {
-            answer = true;
-        }
-        n /= 10;
+      return true;
+    } else if (n % 10 != 0) 
+    {
+      increased = true;
     }
-    return false;
+    n /=  10 ;
+  }
+  return false;
 }
-
